@@ -8,8 +8,18 @@
 /* ... */
 
 
+/* Add this at the top of the file, after the @import "tailwindcss"; */
+@font-face {
+  font-family: 'RedditSans';
+  src: url('/fonts/RedditSans-Regular.woff2') format('woff2'),
+       url('/fonts/RedditSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* The existing font-family declaration is already correct */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'RedditSans', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -156,9 +166,10 @@ button:focus-visible {
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-neutral-200;
   }
   body {
-    @apply bg-background text-foreground;
+    background: linear-gradient(to bottom, #237A57, #093028);
+    color: rgba(255, 255, 255, 0.87);
   }
 }
